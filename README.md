@@ -20,9 +20,6 @@ Automate the detection of evasive malware that executes payload binary files fro
 The script maps every PID's execution path. If a process link exists in RAM but `os.path.exists(path)` evaluates to `False` or contains a `(deleted)` label, it flags a high-priority **[ALERT]**. Additionally, it triggers a **[WARNING]** for any process executing inside world-writable directories (`/tmp`, `/var/tmp`, `/dev/shm`).
 
 ### 🔧 How to Run
+
 ```bash
 python3 ghost_process_monitor.py
-
-### 📸 Proof of Concept (PoC)
-
-Here is the script in action, successfully detecting the simulated defense evasion technique in real-time:<img width="944" height="348" alt="Lab1" src="https://github.com/user-attachments/assets/9f8d6978-efc5-4fdb-a72c-f3cfbcda0a57" />
