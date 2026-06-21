@@ -14,7 +14,7 @@ Each lab is designed to introduce a practical cybersecurity concept while helpin
 
 ## 📌 Objective
 
-Build a Python tool capable of identifying suspicious Linux processes whose executable files have been deleted from disk while the processes remain active in memory.
+Build a Python-based process inspection tool for Linux systems that demonstrates basic process monitoring using simple heuristic checks.
 
 Additionally, the tool detects processes executing from world-writable temporary directories such as `/tmp`, `/var/tmp`, and `/dev/shm`, locations that are commonly abused during malware execution and defense evasion techniques.
 
@@ -50,7 +50,7 @@ The tool then performs two simple security checks:
 
 ### 🚨 Rule 1 — Deleted Executable Detection
 
-If the executable path no longer exists on disk or is marked as **`(deleted)`**, the process is reported as a potential **Ghost Process**.
+If the executable path is no longer present on disk, the process is flagged as potentially suspicious.
 
 ### ⚠️ Rule 2 — Temporary Directory Detection
 
@@ -94,7 +94,7 @@ A copy of the Linux `sleep` binary is executed from the `/tmp` directory and kep
 
 The Ghost Process Monitor successfully detects:
 
-- A running executable that no longer exists on disk.
+- Suspicious behavior related to missing executable paths is detected using basic process inspection.
 - A process executing from a temporary directory.
 
 <img width="944" height="348" alt="Lab1" src="https://github.com/user-attachments/assets/6f71b72d-2b1b-4adf-9364-463483e4128c" />
@@ -131,4 +131,4 @@ As I progress through future labs, I plan to improve this tool by adding feature
 
 This project was created exclusively for educational purposes as part of my Cybersecurity Engineering learning journey.
 
-The detection techniques implemented in this laboratory are intentionally simple and are designed to demonstrate fundamental process monitoring concepts rather than replace professional Endpoint Detection and Response (EDR) solutions.
+This project demonstrates simplified heuristic-based process monitoring techniques for educational purposes and is not intended to be used as a production-grade security solution.
